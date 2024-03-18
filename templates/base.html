@@ -1,0 +1,48 @@
+{%load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{hotels.logo.url}}" type="image/png">
+        <title>hotel </title>
+        {% include "css.html" %}
+        <style>
+            .breadcrumb_area{
+                position: relative;
+                padding: 172px 0px 84px;
+                background: #04091e;
+                z-index: 1;
+                overflow: hidden;
+                .bg-parallax{
+                    background: url("../image/about_banner.jpg") no-repeat scroll center 0 / cover;
+                    opacity: 1;
+                    z-index: -1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--================Header Area =================-->
+        {% include "header.html" %}
+        <!--================Header Area =================-->
+         
+        <!--================Banner Area =================-->
+       
+        {% block banner %} 
+        {% endblock banner %}
+        <!--================Banner Area =================-->
+        {% block content %} 
+        {% endblock content %} 
+        <!--================ start footer Area  =================-->	
+        {% include "footer.html" %}
+		<!--================ End footer Area  =================-->
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        {% include "js.html" %}
+      
+    </body>
+</html>

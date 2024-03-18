@@ -1,0 +1,19 @@
+<section class="testimonial_area section_gap">
+    <div class="container">
+        <div class="section_title text-center">
+            <h2 class="title_color">Testimonials from our Clients</h2>
+        </div>
+        <div class="testimonial_slider owl-carousel">
+            {% for testimonial in testimonials %}
+                <div class="media testimonial_item">
+                    <img class="rounded-circle" src="{{ testimonial.image.url }}" width="60" height="60" alt="{{ testimonial.name }}">
+                    <div class="media-body">
+                        <p>{{ testimonial.content }}</p>
+                        <a href="#"><h4 class="sec_h4">{{ testimonial.name }}</h4></a>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

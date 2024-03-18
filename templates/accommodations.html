@@ -1,0 +1,67 @@
+{% extends "base.html" %} {%load static %} {% block content %} 
+<style>
+    .accomodation_item ul {
+        list-style: none; /* Remove bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    .accomodation_item ul li {
+        margin-bottom: 5px; /* Optional: Adjust the spacing between list items */
+    }
+</style>
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area">
+            <div class="overlay bg-parallax" style="background: url('{{ header_image.header_image.url }}') no-repeat center/cover; background-attachment: fixed;" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle">Accomodation</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Accomodation</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+        
+        <!--================ Accomodation Area  =================-->
+        <section class="accomodation_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Special Accomodation</h2>
+                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast,</p>
+                </div>
+               
+
+                <div class="row mb_30">
+                    {% for accommodation in accommodations %}
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="{{ accommodation.image.url }}" alt="{{ accommodation.title }}" class="img-fluid" >
+                                <a href="{% url 'hotel:accommodation_details' accommodation.id %}" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <a href="{% url 'hotel:accommodation_details' accommodation.id %}">
+                                <h4 class="sec_h4">{{ accommodation.room_type }}</h4>
+                            </a>
+                            <h5>${{ accommodation.price_per_night }}<small>/night</small></h5>
+                            <p> <ul class="unordered-list1">
+                                {% for service in accommodation.amenities.all %}
+                                <li > {{ service.name }}</li>
+                                {% endfor %}
+                            </ul></p>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                </div>
+            </div>
+        </section>
+        <!--================ Accomodation Area  =================-->
+        <!--================Booking Tabel Area =================-->
+        {% include "booking.html" %}
+        <!--================Booking Tabel Area  =================-->
+       
+
+{% endblock %}

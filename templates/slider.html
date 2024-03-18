@@ -1,0 +1,35 @@
+{%load static %}
+<section class="header-slider header-slider-preloader" id="header-slider">
+
+    <div class="animation-slides owl-carousel owl-theme" id="animation-slide">
+         <!--Slide 1-->
+         {% for slider in sliders%}
+        <div style="background-image:url({{slider.image.url}})" class="item">
+            <div class="slide-table">
+                <div class="slide-tablecell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="slide-text">
+                                   <h1>{{slider.main_text}}</h1>
+                                       <p>{{slider.sub_text}}</p>
+                                    <div class="slide-buttons">
+                                        <a href="#" class="slide-btn btn btn-border">Donate Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    
+    </div>
+
+    <!-- Preloader -->
+    <div class="slider_preloader">
+        <div class="slider_preloader_status">&nbsp;</div>
+    </div>
+
+</section>

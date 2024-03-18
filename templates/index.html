@@ -1,0 +1,133 @@
+{% extends "base.html" %} {%load static %} 
+{% block banner %} 
+{% include "banner.html" %}
+{% endblock banner %} 
+
+{% block content %} 
+<!-- Add this line to the head section of your HTML -->
+<style>
+    .accomodation_item ul {
+        list-style: none; /* Remove bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    .accomodation_item ul li {
+        margin-bottom: 5px; /* Optional: Adjust the spacing between list items */
+    }
+</style>
+
+      
+        <!--================ Accomodation Area  =================-->
+        <section class="accomodation_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Hotel Accommodation</h2>
+                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast.</p>
+                </div>
+                <div class="row mb_30">
+                    {% for accommodation in accommodations %}
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="accomodation_item text-center">
+                                <div class="hotel_img">
+                                    <img src="{{ accommodation.image.url }}" alt="{{ accommodation.title }}" class="img-fluid" >
+                                    <a href="{% url 'hotel:accommodation_details' accommodation.id %}" class="btn theme_btn button_hover">Book Now</a>
+                                </div>
+                                <a href="{% url 'hotel:accommodation_details' accommodation.id %}">
+                                    <h4 class="sec_h4">{{ accommodation.room_type }}</h4>
+                                </a>
+                                <h5>${{ accommodation.price_per_night }} <small>/night</small></h5>
+                                <p> <ul>
+                                    {% for service in accommodation.amenities.all %}
+                                    <li> {{ service.name }}</li>
+                                    {% endfor %}
+                                </ul></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <!--================ Accomodation Area  =================-->
+        
+        <!--================ Facilities Area  =================-->
+        <section class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w">Royal Facilities</h2>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+                <div class="row mb_30">
+                    {% for facility in facilities %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="facilities_item">
+                                <h4 class="sec_h4">  <img src="{{ facility.icon.url }}" width="50" height="50" >
+                                    {{ facility.name }}</h4>
+                                <p>{{ facility.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </section>
+        <!--================ Facilities Area  =================-->
+        
+        <!--================ About History Area  =================-->
+        <section class="about_history_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content">
+                            <h2 class="title title_color">{{ about_us.title }}</h2>
+                            <p>{{ about_us.content }}</p>
+                            <a href="#" class="button_hover theme_btn_two">Request Custom Price</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{{ about_us.image.url }}" alt="img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--================ About History Area  =================-->
+        
+        <!--================ Testimonial Area  =================-->
+        {% include "testimonial.html" %}
+
+
+        <!--================ Testimonial Area  =================-->
+        
+        <!--================ Latest Blog Area  =================-->
+        <section class="latest_blog_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Hotel Service</h2>
+                </div>
+                <div class="row mb_30">
+
+                    {% for hotel_service in hotel_service%}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-recent-blog-post">
+                            <div class="thumb">
+                                <img class="img-fluid" src="{{hotel_service.image.url}}" alt="post">
+                            </div>
+                            <div class="details">
+                              
+                                <a href="#"><h4 class="sec_h4">{{hotel_service.name}}</h4></a>
+                                <p>{{hotel_service.description}}</p>
+                            </div>	
+                        </div>
+                    </div>
+                    {%endfor%}
+                   
+                </div>
+            </div>
+        </section>
+        <!--================ Recent Area  =================-->
+        
+{% endblock %}

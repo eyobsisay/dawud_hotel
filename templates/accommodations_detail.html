@@ -1,0 +1,119 @@
+{% extends "base.html" %} {%load static %} {% block content %} 
+     <!--================Breadcrumb Area =================-->
+     <section class="breadcrumb_area" >
+        <div class="overlay bg-parallax" style="background: url('{{ header_image.header_image.url }}') no-repeat center/cover; background-attachment: fixed;" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="page-cover text-center">
+                <h2 class="page-cover-tittle">Room </h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Room Detail</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Custom CSS for animations -->
+  <style>
+    /* Add your custom styles for animations here */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 214px;;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+
+
+
+
+  <!-- Room Details Section -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4 animated bounceIn">{{accommodations_details.room_type}}</h1>
+
+    <!-- Image Gallery -->
+    <div class="row">
+      <div class="col-md-4 mb-3 gallery-item" data-toggle="modal" data-target="#exampleModal" data-img="{{accommodations_details.image.url}}">
+        <img class="img-fluid" height="600" src="{{accommodations_details.image.url}}" alt="Room Image 1">
+      </div>
+      {% if accommodations_details.image1 %}
+      <div class="col-md-4 mb-3 gallery-item" data-toggle="modal" data-target="#exampleModal" data-img="{{accommodations_details.image1.url}}">
+        <img class="img-fluid" height="600" src="{{accommodations_details.image1.url}}" alt="Room Image 2">
+      </div>
+      {%else%}
+      {%endif%}
+
+      {% if accommodations_details.image1 %}
+      <div class="col-md-4 mb-3 gallery-item" data-toggle="modal" data-target="#exampleModal" data-img="{{accommodations_details.image2.url}}">
+        <img class="img-fluid" height="600" src="{{accommodations_details.image2.url}}" alt="Room Image 2">
+      </div>
+      {%else%}
+      {%endif%}
+      {% if accommodations_details.image1 %}
+      <div class="col-md-4 mb-3 gallery-item" data-toggle="modal" data-target="#exampleModal" data-img="{{accommodations_details.image3.url}}">
+        <img class="img-fluid" height="600" src="{{accommodations_details.image3.url}}" alt="Room Image 2">
+      </div>
+      {%else%}
+      {%endif%}
+      
+    </div>
+
+    <!-- Room Details -->
+    <div class="row mt-4">
+      <div class="col-md-8 animated fadeInLeft">
+        {{accommodations_details.description_detail|safe}}
+        </div>
+      <div class="col-md-4 animated fadeInRight">
+        <h5>Room Amenities</h5>
+        <ul>
+            {% for service in accommodations_details.amenities.all %}
+                                <li > {{ service.name }}</li>
+                                {% endfor %}
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal for Image Gallery -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" alt="Modal Image" id="modalImage" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script to update modal image source -->
+  <script>
+    $('.gallery-item').click(function() {
+      var imgSrc = $(this).data('img');
+      $('#modalImage').attr('src', imgSrc);
+    });
+  </script>
+
+
+
+
+        <!--================ Accomodation Area  =================-->
+        <!--================Booking Tabel Area =================-->
+        {% include "booking.html" %}
+        <!--================Booking Tabel Area  =================-->
+       
+
+{% endblock %}

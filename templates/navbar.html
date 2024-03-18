@@ -1,0 +1,281 @@
+{%load static %}
+
+</style>
+<style>
+  .animated-text {
+    transition: transform 0.3s ease;
+  }
+
+  .animated-text:hover {
+    transform: scale(1.2);
+    z-index: 10000;
+  }
+</style>
+<!-- top bar start -->
+<section class="top-bar v4">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-md-8 align-self-center">
+        <div class="ts-breaking-news clearfix">
+          <h2 class="breaking-title float-left">
+            <i class="fa fa-bolt"></i> Breaking News :
+          </h2>
+          <div class="breaking-news-content float-left" id="breaking_slider1">
+            
+            {% for braking in breaking_news %}
+            <div class="breaking-post-content">
+              <p>
+                <a href="{% url 'roha:breaking_article_detail' braking.id %}"
+                  >  {{ braking.title|safe }} </a
+                >
+              </p>
+            </div>
+            {%endfor%}
+            
+            
+          </div>
+         
+        </div>
+      </div>
+      <!-- end col-->
+
+      <div class="col-md-4 align-self-center">
+        <div class="row">
+          
+          <div class="col-xs-6 text-right">
+            {% include 'youtube_button.html' %}
+          </div>
+          <div class="col-xs-6">
+            {% include 'donate_btn.html' %}
+          </div>
+        </div>
+      </div>
+      <!--end col -->
+    </div>
+    <!-- end row -->
+  </div>
+</section>
+<!-- end top bar-->
+<section class="header-middle v2"  style="background-image: url({{banner.image.url}});background-size: cover;height: 137px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 align-self-center">
+        <div class="header-logo">
+          <a href="{% url 'roha:index' %}">
+            <img
+              src="{{organizational_info.logo.url}}"
+              width="200"
+              height="80"
+              alt="" />
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-md-8 align-self-center">
+        <div class="banner-img">
+          <a href="{{ad_header.link}}">
+            <img
+              class="img-fluid"
+              src="{{ad_header.ad_image.url}}"
+
+              alt="" />
+          </a>
+        </div>
+      </div>
+      <!-- col end -->
+    </div>
+    <!-- row  end -->
+  </div>
+  <!-- container end -->
+</section>
+
+<!-- header nav start-->
+<header class="navbar-standerd nav-item">
+  <div class="container">
+    <div class="row">
+      <!-- logo end-->
+      <div class="col-lg-12">
+        <!--nav top end-->
+        <nav class="navigation ts-main-menu navigation-landscape">
+          <div class="nav-header">
+            <a class="nav-brand" href="index.html">
+              <!-- <img src="{% static 'images/footer_logo.png' %}" alt=""> -->
+            </a>
+            <div class="nav-toggle"></div>
+          </div>
+          <!--nav brand end-->
+
+          <div class="nav-menus-wrapper clearfix">
+            <!--nav right menu start-->
+            <ul class="right-menu align-to-right">
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-warining dropdown-toggle" style="background-color: #894615;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {% if user.is_authenticated %}
+                          Welcome, {{ user.username }}
+                      {% else %}
+                          {% if selected_language == 'am' %}
+                              ግባ
+                          {% else %}
+                              Log in
+                          {% endif %}
+                      {% endif %}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      {% if user.is_authenticated %}
+                          <form action="{% url 'auth:logout' %}" method="POST">
+                              {% csrf_token %}
+                              <div class="col">
+                              <button type="submit" class="dropdown-item btn btn-primary btn-sm btn-outline-primary">
+                                  {% if selected_language == 'am' %}
+                                      ውጣ
+                                  {% else %}
+                                      Logout
+                                  {% endif %}
+                              </button>
+                              </div>
+                          </form>
+                      {% else %}
+                          <a class="dropdown-item" href="{% url 'auth:login' %}">
+                              {% if selected_language == 'am' %}
+                                  ግባ
+                              {% else %}
+                                  Log in
+                              {% endif %}
+                          </a>
+                      {% endif %}
+                      <form method="post" action="{% url 'roha:set_language' %}" class="dropdown-item">
+                          {% csrf_token %}
+                          <div class="row align-items-center">
+                              <div class="col">
+                                  {{ lang_form.lang }}
+                              </div>
+                              <div class="col">
+                                  <button type="submit" class="btn btn-primary btn-sm btn-outline-primary">
+                                      {% if selected_language == 'am' %}
+                                          ቀይር
+                                      {% else %}
+                                          Change
+                                      {% endif %}
+                                  </button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              
+                    
+              </li>
+              
+            </ul>
+            <!--nav right menu end-->
+
+            <!-- nav menu start-->
+            <ul class="nav-menu">
+              <li class="active" class="animated-text">
+                     
+                {% if selected_language == 'am' %}
+                <a href="{% url 'roha:index' %}" class="animated-text">መነሻ </a>
+                {%else%}
+                <a href="{% url 'roha:index' %}" class="animated-text">Home </a>
+  
+                {%endif%}
+              </li>
+              <li >
+                {% if selected_language == 'am' %}
+                <a href="#" class="animated-text">ዜና</a>
+                <div class="megamenu-panel ts-mega-menu">
+                  <div class="megamenu-lists">
+                    <ul class="megamenu-list list-col-2">
+                      {% for c in nav_category %}
+                      <li class="animated-text">
+                        <a href="{% url 'roha:article_category' c.id %}"
+                          >{{c.amh_name}}</a
+                        >
+                      </li>
+                      {%endfor%}
+                    </ul>
+                  </div>
+                </div>
+                {%else%}
+                <a href="#" class="animated-text">News</a>
+                <div class="megamenu-panel ts-mega-menu">
+                  <div class="megamenu-lists">
+                    <ul class="megamenu-list list-col-2">
+                      {% for c in nav_category %}
+                      <li class="animated-text">
+                        <a href="{% url 'roha:article_category' c.id %}"
+                          >{{c.name}}</a
+                        >
+                      </li>
+                      {%endfor%}
+                    </ul>
+                  </div>
+                </div>
+                {%endif%}
+              </li>
+              <li >
+                {% if selected_language == 'am' %}
+                <a href="{% url 'roha:blog' %}" class="animated-text">Shows</a>
+                <div class="megamenu-panel ts-mega-menu">
+                  <div class="megamenu-lists">
+                    <ul class="megamenu-list list-col-2">
+                    {% for c in nav_blog_category %}
+                    <li class="">
+                      <a href="{% url 'roha:blog_category' c.id %}"
+                      >{{c.amh_name}}</a
+                      >
+                    </li>
+                    {%endfor%}
+                    </ul>
+                  </div>
+                  </div>
+                {%else%}
+                <a href="{% url 'roha:blog' %}" class="animated-text">Shows</a>
+                <div class="megamenu-panel ts-mega-menu">
+                  <div class="megamenu-lists">
+                    <ul class="megamenu-list list-col-2">
+                    {% for c in nav_blog_category %}
+                    <li class="">
+                      <a href="{% url 'roha:blog_category' c.id %}"
+                      >{{c.name}}</a
+                      >
+                    </li>
+                    {%endfor%}
+                    </ul>
+                  </div>
+                  </div>
+                {%endif%}
+             
+              
+              </li>
+              <li class="animated-text">
+                {% if selected_language == 'am' %}
+                <a href="{% url 'roha:contact_us' %}">አግኙን</a>
+                {%else%}
+                <a href="{% url 'roha:contact_us' %}">Contact US</a>
+                {%endif%}
+
+              </li>
+
+              <li class="animated-text">
+                {% if selected_language == 'am' %}
+                <a href="{% url 'roha:about_us' %}">ስለኛ</a>
+
+                {%else%}
+                <a href="{% url 'roha:about_us' %}">about Us</a>
+
+                {%endif%}
+
+              </li>
+             
+            </ul>
+            <!--nav menu end-->
+          </div>
+        </nav>
+        <!-- nav end-->
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header nav end-->

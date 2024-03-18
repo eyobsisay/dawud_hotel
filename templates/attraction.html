@@ -1,0 +1,48 @@
+{% extends "base.html" %} {%load static %} {% block content %} 
+
+    <!--================Breadcrumb Area =================-->
+    <section class="breadcrumb_area">
+        <div class="overlay bg-parallax" style="background: url('{{ header_image.header_image.url }}') no-repeat center/cover; background-attachment: fixed;" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="page-cover text-center">
+                <h2 class="page-cover-tittle">Attraction</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Attraction</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!--================Breadcrumb Area =================-->
+    
+ 
+    <!--================Breadcrumb Area =================-->
+    <div class="container attraction-container">
+        {% for attraction in attraction %}
+            <div class="row">
+                {% if forloop.counter|divisibleby:2 %}
+                    <!-- Image on one side -->
+                    <div class="col-md-6 attraction-image">
+                        <img class="img-fluid" src="{{ attraction.image.url }}" alt="{{ attraction.title }}">
+                    </div>
+                    <!-- Text on the other side -->
+                    <div class="col-md-6 attraction-text">
+                        <h2>{{ attraction.title }}</h2>
+                        <p>{{ attraction.title }}</p>
+                    </div>
+                {% else %}
+                    <!-- Text on one side -->
+                    <div class="col-md-6 attraction-text">
+                        <h2>{{ attraction.title }}</h2>
+                        <p>{{ attraction.description }}</p>
+                    </div>
+                    <!-- Image on the other side -->
+                    <div class="col-md-6 attraction-image">
+                        <img class="img-fluid" src="{{ attraction.image.url }}" width="200" height="500" alt="{{ attraction.title }}">
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
