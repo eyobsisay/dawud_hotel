@@ -1,133 +1,657 @@
 {% extends "base.html" %} {%load static %} 
-{% block banner %} 
-{% include "banner.html" %}
-{% endblock banner %} 
 
 {% block content %} 
-<!-- Add this line to the head section of your HTML -->
-<style>
-    .accomodation_item ul {
-        list-style: none; /* Remove bullets */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-    }
+<div id="about">
+    <div class="container">
 
-    .accomodation_item ul li {
-        margin-bottom: 5px; /* Optional: Adjust the spacing between list items */
-    }
-</style>
+        <div class="title1">LITTLE ABOUT US</div>
 
-      
-        <!--================ Accomodation Area  =================-->
-        <section class="accomodation_area section_gap">
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Hotel Accommodation</h2>
-                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast.</p>
+        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+
+        <div class="about-slider-wrapper clearfix">
+            <div class="about-slider-left">
+                <figure class="about-slider-thumb">
+                    <img src="{% static 'images/about00.jpg' %}" alt="" class="img-fluid">
+                </figure>
+                <div class="slider-for">
+                    <div class="slider-item">
+                        <img src="{% static 'images/about01.jpg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="slider-item">
+                        <img src="{% static 'images/about02.jpg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="slider-item">
+                        <img src="{% static 'images/about03.jpg' %}" alt="" class="img-fluid">
+                    </div>
                 </div>
-                <div class="row mb_30">
-                    {% for accommodation in accommodations %}
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="accomodation_item text-center">
-                                <div class="hotel_img">
-                                    <img src="{{ accommodation.image.url }}" alt="{{ accommodation.title }}" class="img-fluid" >
-                                    <a href="{% url 'hotel:accommodation_details' accommodation.id %}" class="btn theme_btn button_hover">Book Now</a>
+            </div>
+            <div class="about-slider-right">
+                <div class="slider-nav">
+                    <div class="slider-item">
+                        <div class="txt1">
+                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
+                        </div>
+                        <div class="txt2">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
+                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
+                                in lore ipsum dolor.
+                            </p>
+                            <p>
+                                Quis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus
+                                mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id
+                                metus mollis. Sed dictum ligula mi id metus msed dictum ligula nibus fbus, mi in
+                                lore ipsum dolor.
+                            </p>
+                        </div>
+                        <div class="txt3">
+                            GEORGE BAGRATION
+                        </div>
+                        <div class="txt4">
+                            MANAGER
+                        </div>
+                        <div class="txt5">
+                            HOTEL DELVATORE
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="txt1">
+                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
+                        </div>
+                        <div class="txt2">
+                            <p>
+                                Morem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
+                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
+                                in lore ipsum dolor, Nunc finibus, mi in tincidunt aliquet, ex orci venenatis.
+                            </p>
+                            <p>
+                                Auis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus
+                                mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Mi in lore ipsum dolor.
+                            </p>
+                        </div>
+                        <div class="txt3">
+                            ELENE ERISTAVI
+                        </div>
+                        <div class="txt4">
+                            STAFF MANAGER
+                        </div>
+                        <div class="txt5">
+                            HOTEL DELVATORE
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="txt1">
+                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
+                        </div>
+                        <div class="txt2">
+                            <p>
+                                Mollised ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
+                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
+                                in lore ipsum dolor.
+                            </p>
+                            <p>
+                                Consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis.
+                                Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id metus
+                                mollis. Sed dictum ligula mi id metus mollised dictum ligula nibus finibus, mi in
+                                lore ipsum dolor.
+                            </p>
+                        </div>
+                        <div class="txt3">
+                            DAVID ORBELIANI
+                        </div>
+                        <div class="txt4">
+                            ADMINISTRATOR
+                        </div>
+                        <div class="txt5">
+                            HOTEL DELVATORE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="rooms">
+    <div class="container">
+
+        <div class="title1">OUR ROOMS</div>
+
+        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="room-wrapper">
+                    <div class="room-inner">
+                        <div class="room">
+                            <figure>
+                                <img src="{% static 'images/room04.jpg' %}" alt="" class="img-fluid">
+                                <figcaption>
+                                    <div class="txt1">GRAND DELVATORE</div>
+                                    <div class="txt2">START FROM $450.00</div>
+                                </figcaption>
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">Grand Delux Room</div>
+                                <div class="txt2">
+                                    39 REVEW
+                                    <div class="small-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
                                 </div>
-                                <a href="{% url 'hotel:accommodation_details' accommodation.id %}">
-                                    <h4 class="sec_h4">{{ accommodation.room_type }}</h4>
-                                </a>
-                                <h5>${{ accommodation.price_per_night }} <small>/night</small></h5>
-                                <p> <ul>
-                                    {% for service in accommodation.amenities.all %}
-                                    <li> {{ service.name }}</li>
-                                    {% endfor %}
-                                </ul></p>
+                                <div class="txt3">
+                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
+                                </div>
+                                <div class="txt4">
+                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
+                                                                         aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="select-txt">
+                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
+                                                                                aria-hidden="true"></i></span></a>
+                            </div>
+                            <div class="room-icons">
+                                <div class="room-ic room-ic-wifi">
+                                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                                    <div class="txt1">FREE WIFI</div>
+                                </div>
+                                <div class="room-ic room-ic-person">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <div class="txt1">MAX<br>PERSON</div>
+                                </div>
+                                <div class="room-ic room-ic-breakfast">
+                                    <i class="fa fa-coffee" aria-hidden="true"></i>
+                                    <div class="txt1">BREAKFAST<br>INCLUDED</div>
+                                </div>
+                                <div class="room-ic room-ic-left">
+                                    <div class="txt0">4</div>
+                                    <div class="txt1">ROOMS LEFT</div>
+                                </div>
+                                <div class="room-ic room-ic-refund">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                    <div class="txt1">NO REFUND</div>
+                                </div>
+                                <div class="room-price">
+                                    <div class="txt1">$<span>450</span></div>
+                                    <div class="txt2">PER NIGHT</div>
+                                </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        
-        <!--================ Accomodation Area  =================-->
-        
-        <!--================ Facilities Area  =================-->
-        <section class="facilities_area section_gap">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
-            </div>
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_w">Royal Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
-                <div class="row mb_30">
-                    {% for facility in facilities %}
-                        <div class="col-lg-4 col-md-6">
-                            <div class="facilities_item">
-                                <h4 class="sec_h4">  <img src="{{ facility.icon.url }}" width="50" height="50" >
-                                    {{ facility.name }}</h4>
-                                <p>{{ facility.description }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                
-            </div>
-        </section>
-        <!--================ Facilities Area  =================-->
-        
-        <!--================ About History Area  =================-->
-        <section class="about_history_area section_gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content">
-                            <h2 class="title title_color">{{ about_us.title }}</h2>
-                            <p>{{ about_us.content }}</p>
-                            <a href="#" class="button_hover theme_btn_two">Request Custom Price</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="{{ about_us.image.url }}" alt="img">
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!--================ About History Area  =================-->
-        
-        <!--================ Testimonial Area  =================-->
-        {% include "testimonial.html" %}
-
-
-        <!--================ Testimonial Area  =================-->
-        
-        <!--================ Latest Blog Area  =================-->
-        <section class="latest_blog_area section_gap">
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Hotel Service</h2>
-                </div>
-                <div class="row mb_30">
-
-                    {% for hotel_service in hotel_service%}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-recent-blog-post">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{{hotel_service.image.url}}" alt="post">
+            <div class="col-lg-4">
+                <div class="room-wrapper">
+                    <div class="room-inner">
+                        <div class="room">
+                            <figure>
+                                <img src="{% static 'images/room05.jpg' %}" alt="" class="img-fluid">
+                                <figcaption>
+                                    <div class="txt1">KING DELVATORE</div>
+                                    <div class="txt2">START FROM $315.00</div>
+                                </figcaption>
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">King Delux Room</div>
+                                <div class="txt2">
+                                    39 REVEW
+                                    <div class="small-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="txt3">
+                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
+                                </div>
+                                <div class="txt4">
+                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
+                                                                         aria-hidden="true"></i></a>
+                                </div>
                             </div>
-                            <div class="details">
-                              
-                                <a href="#"><h4 class="sec_h4">{{hotel_service.name}}</h4></a>
-                                <p>{{hotel_service.description}}</p>
-                            </div>	
+                            <div class="select-txt">
+                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
+                                                                                aria-hidden="true"></i></span></a>
+                            </div>
+                            <div class="room-icons">
+                                <div class="room-ic room-ic-wifi">
+                                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                                    <div class="txt1">FREE WIFI</div>
+                                </div>
+                                <div class="room-ic room-ic-person">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <div class="txt1">MAX<br>PERSON</div>
+                                </div>
+                                <div class="room-ic room-ic-breakfast">
+                                    <i class="fa fa-coffee" aria-hidden="true"></i>
+                                    <div class="txt1">BREAKFAST<br>INCLUDED</div>
+                                </div>
+                                <div class="room-ic room-ic-left">
+                                    <div class="txt0">4</div>
+                                    <div class="txt1">ROOMS LEFT</div>
+                                </div>
+                                <div class="room-price">
+                                    <div class="txt1">$<span>315</span></div>
+                                    <div class="txt2">PER NIGHT</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    {%endfor%}
-                   
                 </div>
             </div>
-        </section>
-        <!--================ Recent Area  =================-->
+            <div class="col-lg-4">
+                <div class="room-wrapper">
+                    <div class="room-inner">
+                        <div class="room">
+                            <figure>
+                                <img src="{% static 'images/room06.jpg' %}" alt="" class="img-fluid">
+                                <figcaption>
+                                    <div class="txt1">CLASSIC DELVATORE</div>
+                                    <div class="txt2">START FROM $115.00</div>
+                                </figcaption>
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">Classic Room</div>
+                                <div class="txt2">
+                                    87 REVEW
+                                    <div class="small-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="txt3">
+                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
+                                </div>
+                                <div class="txt4">
+                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
+                                                                         aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="select-txt">
+                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
+                                                                                aria-hidden="true"></i></span></a>
+                            </div>
+                            <div class="room-icons">
+                                <div class="room-ic room-ic-wifi">
+                                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                                    <div class="txt1">FREE WIFI</div>
+                                </div>
+                                <div class="room-ic room-ic-person">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <div class="txt1">MAX<br>PERSON</div>
+                                </div>
+                                <div class="room-ic room-ic-refund">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                    <div class="txt1">NO REFUND</div>
+                                </div>
+                                <div class="room-ic room-ic-left">
+                                    <div class="txt0">4</div>
+                                    <div class="txt1">ROOMS LEFT</div>
+                                </div>
+                                <div class="room-ic room-ic-discount">
+                                    <div class="txt0">0<span>%</span></div>
+                                    <div class="txt1">DISCOUNT</div>
+                                </div>
+                                <div class="room-price">
+                                    <div class="txt1">$<span>115</span></div>
+                                    <div class="txt2">PER NIGHT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="best-places">
+    <div class="container">
+
+        <div class="title1">BEST PLACES AROUND THE DELVATORE</div>
+        <div class="title2">FIND YOUR PLACE</div>
+
+        <div class="owl-carousel owl-carousel-wide">
+            <div class="item">
+                <div class="place-wrapper">
+                    <div class="place-inner">
+                        <div class="place clearfix">
+                            <div class="caption">
+                                <div class="txt1">BEST PLACE GALLERY</div>
+                                <div class="text-block1">
+                                    <div class="text-block1-inner">
+                                        <div class="txt2">Aqua Park</div>
+                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
+                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="txt4">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
+                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
+                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
+                                </div>
+                                <div class="txt5">
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Sauna</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">SPA</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Free</div>
+                                            <div class="rest1-txt2">Massage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="figure">
+                                <img src="{% static 'images/place01.jpg' %}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="place-wrapper">
+                    <div class="place-inner">
+                        <div class="place clearfix">
+                            <div class="caption">
+                                <div class="txt1">BEST PLACE GALLERY</div>
+                                <div class="text-block1">
+                                    <div class="text-block1-inner">
+                                        <div class="txt2">Palm Beach</div>
+                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
+                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="txt4">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
+                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
+                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
+                                </div>
+                                <div class="txt5">
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Sauna</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">SPA</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Free</div>
+                                            <div class="rest1-txt2">Massage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="figure">
+                                <img src="{% static 'images/place02.jpg' %}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="place-wrapper">
+                    <div class="place-inner">
+                        <div class="place clearfix">
+                            <div class="caption">
+                                <div class="txt1">BEST PLACE GALLERY</div>
+                                <div class="text-block1">
+                                    <div class="text-block1-inner">
+                                        <div class="txt2">Casino</div>
+                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
+                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="txt4">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
+                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
+                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
+                                </div>
+                                <div class="txt5">
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Sauna</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">SPA</div>
+                                            <div class="rest1-txt2">INCLUDES</div>
+                                        </div>
+                                    </div>
+                                    <div class="rest1 clearfix">
+                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
+                                        <div class="rest1-caption">
+                                            <div class="rest1-txt1">Free</div>
+                                            <div class="rest1-txt2">Massage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="figure">
+                                <img src="{% static 'images/place03.jpg' %}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div id="what-client-say">
+    <div class="container">
+
+        <div class="title1">WHAT CLIENT SAY</div>
+
+        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+
+        <div class="owl-carousel owl-carousel-testimonials">
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client01.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Nina Chambers</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client02.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Jeremy Carlson</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client03.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Josie Howell</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client01.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Nina Chambers</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client02.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Jeremy Carlson</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-inner">
+                        <div class="testimonial clearfix">
+                            <div class="testimonial-caption">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
+                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                            </div>
+                            <div class="author clearfix">
+                                <figure><img src="{% static 'images/client03.jpg' %}" alt="" class="img-fluid"></figure>
+                                <div class="caption">
+                                    <div class="txt1">Josie Howell</div>
+                                    <div class="txt2">Web Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div id="latest-news">
+    <div class="container">
+
+        <div class="title1">LATEST NEWS</div>
+        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="latest-news-wrapper">
+                    <div class="latest-news-inner">
+                        <div class="latest-news clearfix">
+                            <figure><img src="{% static 'images/news01.jpg' %}" alt="" class="img-fluid"></figure>
+                            <div class="caption">
+                                <div class="txt1"><a href="post.html">Hotel Delvatore's Events</a></div>
+                                <div class="txt2">Lorem ipsum dolor sit amet consetuer adipiscing elit, sed diam
+                                    nonummy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="latest-news-wrapper">
+                    <div class="latest-news-inner">
+                        <div class="latest-news clearfix">
+                            <figure><img src="{% static 'images/news02.jpg' %}" alt="" class="img-fluid"></figure>
+                            <div class="caption">
+                                <div class="txt1"><a href="post.html">Delvatore’s new services</a></div>
+                                <div class="txt2">Lorem ipsum dolor sit amet consetuer adipiscing elit, sed diam
+                                    nonummy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
         
 {% endblock %}
