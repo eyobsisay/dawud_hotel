@@ -1,35 +1,141 @@
-{%load static %}
-<section class="header-slider header-slider-preloader" id="header-slider">
+<div id="home" class="">
+    <div id="home-inner" class="home-inner">
+        <div id="slides_wrapper" class="">
+            <div id="slides">
+                <ul class="slides-container">
+                    <li>
+                        <img src="{% static 'images/slide01.jpg' %}" alt="" class="img">
+                    </li>
+                    <li>
+                        <img src="{% static 'images/slide04.jpg' %}" alt="" class="img">
+                    </li>
+                    <li>
+                        <img src="{% static 'images/slide03.jpg' %}" alt="" class="img">
+                    </li>
+                    <li>
+                        <img src="{% static 'images/slide02.jpg' %}" alt="" class="img">
+                    </li>
+                    <li>
+                        <img src="{% static 'images/slide05.jpg' %}" alt="" class="img">
+                    </li>
+                    <li>
+                        <img src="{% static 'images/slide06.jpg' %}" alt="" class="img">
+                    </li>
 
-    <div class="animation-slides owl-carousel owl-theme" id="animation-slide">
-         <!--Slide 1-->
-         {% for slider in sliders%}
-        <div style="background-image:url({{slider.image.url}})" class="item">
-            <div class="slide-table">
-                <div class="slide-tablecell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="slide-text">
-                                   <h1>{{slider.main_text}}</h1>
-                                       <p>{{slider.sub_text}}</p>
-                                    <div class="slide-buttons">
-                                        <a href="#" class="slide-btn btn btn-border">Donate Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-text-wrapper">
+            <div class="container">
+                <div class="slide-text clearfix">
+                    <div class="img1">
+                        <img src="{% static 'images/slide-logo.png' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="txt1"><span>DELVATORE<i><img src="{% static 'images/slide-logo2.png' %}" alt="" class="img-fluid"></i></span>
                     </div>
                 </div>
             </div>
         </div>
-        {%endfor%}
-    
+        <div class="slide-buttons-wrapper">
+            <div class="container">
+                <div class="slide-buttons clearfix">
+                    <div class="slide-button">
+                        <a href="#">
+                            <div class="ic"><img src="{% static 'images/slide-ic1.png' %}" alt="" class="img-fluid"></div>
+                            <div class="hr"></div>
+                            <div class="txt1">Hotel</div>
+                        </a>
+                    </div>
+                    <div class="slide-button">
+                        <a href="#">
+                            <div class="ic"><img src="{% static 'images/slide-ic2.png' %}" alt="" class="img-fluid"></div>
+                            <div class="hr"></div>
+                            <div class="txt1">Breakfast</div>
+                        </a>
+                    </div>
+                    <div class="slide-button">
+                        <a href="#">
+                            <div class="ic"><img src="{% static 'images/slide-ic3.png' %}" alt="" class="img-fluid"></div>
+                            <div class="hr"></div>
+                            <div class="txt1">Fitness Club</div>
+                        </a>
+                    </div>
+                    <div class="slide-button">
+                        <a href="#">
+                            <div class="ic"><img src="{% static 'images/slide-ic4.png' %}" alt="" class="img-fluid"></div>
+                            <div class="hr"></div>
+                            <div class="txt1">Support 24/7</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Preloader -->
-    <div class="slider_preloader">
-        <div class="slider_preloader_status">&nbsp;</div>
+    <div class="booking-wrapper">
+        <div class="container">
+            <div class="booking-inner clearfix">
+                <form action="javascript:;" class="form1 clearfix">
+                    <div class="col1 c1">
+                        <div class="input1_wrapper">
+                            <label>Check in</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check in">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c2">
+                        <div class="input1_wrapper">
+                            <label>Check out</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check out">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c3">
+                        <div class="select1_wrapper">
+                            <label>Adults</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c4">
+                        <div class="select1_wrapper">
+                            <label>Children</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">Children</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Children</option>
+                                    <option value="3">3 Children</option>
+                                    <option value="4">4 Children</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c5">
+                        <div class="select1_wrapper">
+                            <label>Rooms</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Room</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col3 c6">
+                        <button type="submit" class="btn-form1-submit">CHECK AVAILABILITY</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-</section>
+</div>

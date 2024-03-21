@@ -1,111 +1,46 @@
 {% extends "base.html" %} {%load static %} 
+{% block banner %} 
+{% include "banner.html" %}
+{% endblock banner %} 
 
 {% block content %} 
 <div id="about">
     <div class="container">
 
-        <div class="title1">LITTLE ABOUT US</div>
+        <div class="title1">ABOUT US</div>
 
-        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+        <div class="title2">This About  Dawud </div>
 
         <div class="about-slider-wrapper clearfix">
             <div class="about-slider-left">
                 <figure class="about-slider-thumb">
                     <img src="{% static 'images/about00.jpg' %}" alt="" class="img-fluid">
                 </figure>
+
                 <div class="slider-for">
+                   {% for about_us in about_us  %}
                     <div class="slider-item">
-                        <img src="{% static 'images/about01.jpg' %}" alt="" class="img-fluid">
+                        <img src="{{about_us.image.url}}" alt="" class="img-fluid">
                     </div>
-                    <div class="slider-item">
-                        <img src="{% static 'images/about02.jpg' %}" alt="" class="img-fluid">
-                    </div>
-                    <div class="slider-item">
-                        <img src="{% static 'images/about03.jpg' %}" alt="" class="img-fluid">
-                    </div>
+                    {%endfor%}
                 </div>
             </div>
             <div class="about-slider-right">
                 <div class="slider-nav">
+                    {% for about_us in about_us  %}
                     <div class="slider-item">
                         <div class="txt1">
-                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
+                           {{about_us.title}}
                         </div>
                         <div class="txt2">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
-                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
-                                in lore ipsum dolor.
+                                {{about_us.content}}
                             </p>
-                            <p>
-                                Quis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus
-                                mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id
-                                metus mollis. Sed dictum ligula mi id metus msed dictum ligula nibus fbus, mi in
-                                lore ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="txt3">
-                            GEORGE BAGRATION
-                        </div>
-                        <div class="txt4">
-                            MANAGER
-                        </div>
-                        <div class="txt5">
-                            HOTEL DELVATORE
-                        </div>
+                            
+                        </div> 
                     </div>
-                    <div class="slider-item">
-                        <div class="txt1">
-                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
-                        </div>
-                        <div class="txt2">
-                            <p>
-                                Morem ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
-                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
-                                in lore ipsum dolor, Nunc finibus, mi in tincidunt aliquet, ex orci venenatis.
-                            </p>
-                            <p>
-                                Auis.consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus
-                                mollis. Sed dictum ligula finibus, mi in lore ipsum dolor. Mi in lore ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="txt3">
-                            ELENE ERISTAVI
-                        </div>
-                        <div class="txt4">
-                            STAFF MANAGER
-                        </div>
-                        <div class="txt5">
-                            HOTEL DELVATORE
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="txt1">
-                            Lorem ipsum dodor sit amet concateur, patrulo del suno lacrimosa.
-                        </div>
-                        <div class="txt2">
-                            <p>
-                                Mollised ipsum dolor sit amet, consectetur adipiscing elit. aliquam sodales blandit
-                                faucibus. Nunc finibus, mi in tincidunt aliquet, ex orci venenatis arcu, inibus, mi
-                                in lore ipsum dolor.
-                            </p>
-                            <p>
-                                Consequatnc neque et ex. Ut quis dictum ligula. Morbi porttitor mi id metus mollis.
-                                Sed dictum ligula finibus, mi in lore ipsum dolor. Morbi porttitor mi id metus
-                                mollis. Sed dictum ligula mi id metus mollised dictum ligula nibus finibus, mi in
-                                lore ipsum dolor.
-                            </p>
-                        </div>
-                        <div class="txt3">
-                            DAVID ORBELIANI
-                        </div>
-                        <div class="txt4">
-                            ADMINISTRATOR
-                        </div>
-                        <div class="txt5">
-                            HOTEL DELVATORE
-                        </div>
-                    </div>
+                    {%endfor%}
+                  
                 </div>
             </div>
         </div>
@@ -120,6 +55,7 @@
         <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
 
         <div class="row">
+            {% for room in accommodations %}
             <div class="col-lg-4">
                 <div class="room-wrapper">
                     <div class="room-inner">
@@ -186,6 +122,7 @@
                     </div>
                 </div>
             </div>
+            {%endfor%}
             <div class="col-lg-4">
                 <div class="room-wrapper">
                     <div class="room-inner">

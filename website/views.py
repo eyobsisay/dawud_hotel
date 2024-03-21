@@ -25,7 +25,7 @@ def index(request):
     amenities = Amenity.objects.all()
     accommodations = Accommodation.objects.all()
     facilities = Facility.objects.all()
-    about_us = AboutUs.objects.last()
+    about_us = AboutUs.objects.all()
     testimonials = Testimonial.objects.all()
     gallery_images = GalleryImage.objects.all()
     contact_info = ContactInfo.objects.last()  # Assuming there's only one contact info object
