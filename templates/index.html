@@ -63,14 +63,14 @@
                             <figure>
                                 <img src="{% static 'images/room04.jpg' %}" alt="" class="img-fluid">
                                 <figcaption>
-                                    <div class="txt1">GRAND DELVATORE</div>
-                                    <div class="txt2">START FROM $450.00</div>
+                                    <div class="txt1">{{room.room_type}}</div>
+                                    <div class="txt2">START FROM ${{room.price_per_night}}/{{room.price_per_night_etb}}</div>
                                 </figcaption>
                             </figure>
                             <div class="caption">
-                                <div class="txt1">Grand Delux Room</div>
+                                <div class="txt1">{{room.room_type}}</div>
                                 <div class="txt2">
-                                    39 REVEW
+
                                     <div class="small-stars">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -80,15 +80,18 @@
                                     </div>
                                 </div>
                                 <div class="txt3">
-                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
+                                    {% for amenites in room.amenities.all %}   
+
+                                    {{amenites.name}},
+                                    {%endfor%}
                                 </div>
                                 <div class="txt4">
-                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
+                                    <a href="{% url 'hotel:accommodation_details' room.id %}">VIEW DETAIL<i class="fa fa-caret-right"
                                                                          aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             <div class="select-txt">
-                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
+                                <a href="{% url 'hotel:accommodation_details' room.id %}"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
                                                                                 aria-hidden="true"></i></span></a>
                             </div>
                             <div class="room-icons">
@@ -106,15 +109,17 @@
                                     <div class="txt1">BREAKFAST<br>INCLUDED</div>
                                 </div>
                                 <div class="room-ic room-ic-left">
-                                    <div class="txt0">4</div>
-                                    <div class="txt1">ROOMS LEFT</div>
+                                    <div class="txt0">{{room.capacity}}</div>
+                                    <div class="txt1">ROOMS </div>
                                 </div>
                                 <div class="room-ic room-ic-refund">
                                     <i class="fa fa-tags" aria-hidden="true"></i>
                                     <div class="txt1">NO REFUND</div>
                                 </div>
                                 <div class="room-price">
-                                    <div class="txt1">$<span>450</span></div>
+                                    <div class="txt1">$<span>{{room.price_per_night|floatformat:0}}</span></div>
+                                    <div class="txt1"><span>{{room.price_per_night_etb|floatformat:0}}</span></div>
+                                    <div class="txt2">ETB</div>
                                     <div class="txt2">PER NIGHT</div>
                                 </div>
                             </div>
@@ -123,134 +128,7 @@
                 </div>
             </div>
             {%endfor%}
-            <div class="col-lg-4">
-                <div class="room-wrapper">
-                    <div class="room-inner">
-                        <div class="room">
-                            <figure>
-                                <img src="{% static 'images/room05.jpg' %}" alt="" class="img-fluid">
-                                <figcaption>
-                                    <div class="txt1">KING DELVATORE</div>
-                                    <div class="txt2">START FROM $315.00</div>
-                                </figcaption>
-                            </figure>
-                            <div class="caption">
-                                <div class="txt1">King Delux Room</div>
-                                <div class="txt2">
-                                    39 REVEW
-                                    <div class="small-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="txt3">
-                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
-                                </div>
-                                <div class="txt4">
-                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
-                                                                         aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <div class="select-txt">
-                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
-                                                                                aria-hidden="true"></i></span></a>
-                            </div>
-                            <div class="room-icons">
-                                <div class="room-ic room-ic-wifi">
-                                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                                    <div class="txt1">FREE WIFI</div>
-                                </div>
-                                <div class="room-ic room-ic-person">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <div class="txt1">MAX<br>PERSON</div>
-                                </div>
-                                <div class="room-ic room-ic-breakfast">
-                                    <i class="fa fa-coffee" aria-hidden="true"></i>
-                                    <div class="txt1">BREAKFAST<br>INCLUDED</div>
-                                </div>
-                                <div class="room-ic room-ic-left">
-                                    <div class="txt0">4</div>
-                                    <div class="txt1">ROOMS LEFT</div>
-                                </div>
-                                <div class="room-price">
-                                    <div class="txt1">$<span>315</span></div>
-                                    <div class="txt2">PER NIGHT</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="room-wrapper">
-                    <div class="room-inner">
-                        <div class="room">
-                            <figure>
-                                <img src="{% static 'images/room06.jpg' %}" alt="" class="img-fluid">
-                                <figcaption>
-                                    <div class="txt1">CLASSIC DELVATORE</div>
-                                    <div class="txt2">START FROM $115.00</div>
-                                </figcaption>
-                            </figure>
-                            <div class="caption">
-                                <div class="txt1">Classic Room</div>
-                                <div class="txt2">
-                                    87 REVEW
-                                    <div class="small-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="txt3">
-                                    Lorem ipsum dolor sit amet, con cateur non troppo di sarono. El brave al mundo.
-                                </div>
-                                <div class="txt4">
-                                    <a href="details.html">VIEW DETAIL<i class="fa fa-caret-right"
-                                                                         aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                            <div class="select-txt">
-                                <a href="details.html"><span>SELECT THIS ROOM<i class="fa fa-angle-right"
-                                                                                aria-hidden="true"></i></span></a>
-                            </div>
-                            <div class="room-icons">
-                                <div class="room-ic room-ic-wifi">
-                                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                                    <div class="txt1">FREE WIFI</div>
-                                </div>
-                                <div class="room-ic room-ic-person">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <div class="txt1">MAX<br>PERSON</div>
-                                </div>
-                                <div class="room-ic room-ic-refund">
-                                    <i class="fa fa-tags" aria-hidden="true"></i>
-                                    <div class="txt1">NO REFUND</div>
-                                </div>
-                                <div class="room-ic room-ic-left">
-                                    <div class="txt0">4</div>
-                                    <div class="txt1">ROOMS LEFT</div>
-                                </div>
-                                <div class="room-ic room-ic-discount">
-                                    <div class="txt0">0<span>%</span></div>
-                                    <div class="txt1">DISCOUNT</div>
-                                </div>
-                                <div class="room-price">
-                                    <div class="txt1">$<span>115</span></div>
-                                    <div class="txt2">PER NIGHT</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      
         </div>
 
 
