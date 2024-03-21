@@ -150,6 +150,7 @@ class ContactInfo(models.Model):
 class Attraction(models.Model):
     title = models.CharField(max_length=255, verbose_name='Title')
     description = models.TextField(verbose_name='Description')
+    location = models.TextField(verbose_name='Location')
     image = models.ImageField(upload_to='attraction_images/', verbose_name='Image')
 
     def __str__(self):

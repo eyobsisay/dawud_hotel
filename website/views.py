@@ -7,14 +7,14 @@ from django.conf import settings
 def data_for_all():
     hotels = Hotel.objects.last()
     contact_info = ContactInfo.objects.last()
-    about_us = AboutUs.objects.last()
+    about_us_last = AboutUs.objects.last()
     header_image = HeaderImage.objects.last()
     
    
     
     context={
              'contact_info':contact_info,
-             'about_us':about_us,
+             'about_us_last':about_us_last,
              'header_image':header_image,
              'hotels':hotels}
     return context
@@ -30,6 +30,8 @@ def index(request):
     gallery_images = GalleryImage.objects.all()
     contact_info = ContactInfo.objects.last()  # Assuming there's only one contact info object
     hotel_service = HotelService.objects.all()
+    attractions = Attraction.objects.filter()[0:3]
+    
     
     context = {'hotels': hotels,
         'slider_images': slider_images,
@@ -40,6 +42,7 @@ def index(request):
         'testimonials': testimonials,
         'gallery_images': gallery_images,
         'hotel_service':hotel_service,
+        'attractions':attractions,
         'contact_info': contact_info,}
     return render(request, 'index.html',context )
 
