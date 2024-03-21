@@ -1,80 +1,49 @@
 {%load static %}
 <footer class="footer-area section_gap">
-	<div class="bot1-wrapper">
-        <div class="container">
-            <div class="bot1 clearfix">
-                <div class="logo2_wrapper">
-                    <a href="index.html" class="logo2">
-                        <img src="images/logo2.png" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="social2-wrapper">
-                    <ul class="social2">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
-                </div>
-                <p>
-                    <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum, ex at convallis
-                        interdum, <br>justo lectus posuere nulla, at consequat odio mauris quis sem. </i>
-                </p>
-            </div>
-        </div>
-    </div>
+	
     <div class="bot2-wrapper">
         <div class="container">
             <div class="bot2 clearfix">
+
                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="bot2-title">About Us</div>
+                        <div class="recent-post clearfix">
+                            <a href="#">
+                                {% comment %} <figure><img src="{{hotels.logo.url}}" alt="" class="img-fluid"></figure> {% endcomment %}
+                                <div class="caption">
+                                    <div class="txt1">{{hotels.description}}</div>
+                                </div>
+                            </a>
+                        </div>
+                       
+                    </div>
                     <div class="col-md-4">
                         <div class="bot2-title">Contact Info</div>
                         <div class="contact1">
-                            <b>A:</b> 41 Gridgum Sreet 121/2 New-York, USA
+                            <b>Address:</b>  {{contact_info.address}}
                         </div>
                         <div class="contact1">
-                            <b>P:</b> (00) 123 456 789
+                            <b>Phone:</b> {{hotels.phone_number1}}
                         </div>
                         <div class="contact1">
-                            <b>F:</b> (00) 987 654 321
+                            <b>Phone:</b> {{hotels.phone_number2}}
                         </div>
                         <div class="contact1">
-                            <b>E:</b> <a href="#">addres@yourmail.com</a>
+                            <b>Email:</b> <a href="#">{{contact_info.email}}</a>
                         </div>
                     </div>
+                   
                     <div class="col-md-4">
-                        <div class="bot2-title">recent posts</div>
-                        <div class="recent-post clearfix">
-                            <a href="#">
-                                <figure><img src="images/recent01.jpg" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">New Aqua Park <br>Near The Hotel DELVATORE</div>
-                                    <div class="txt2">11 March, 2021</div>
-                                </div>
-                            </a>
+                        <div class="social2-wrapper">
+                            <ul class="social2">
+                                <li><a href="{{contact_info.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{contact_info.twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{contact_info.instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{contact_info.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="{{contact_info.youtube}}"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="recent-post clearfix">
-                            <a href="#">
-                                <figure><img src="images/recent02.jpg" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Botanic Garden <br>Near The Hotel DELVATORE</div>
-                                    <div class="txt2">23 March, 2021</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="bot2-title">BEST PLACES DELVATORE</div>
-                        <ul class="best1 clearfix">
-                            <li><a href="#"><img src="images/best01.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best02.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best03.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best04.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best05.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best06.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best07.jpg" alt="" class="img-fluid"></a></li>
-                            <li><a href="#"><img src="images/best08.jpg" alt="" class="img-fluid"></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -83,32 +52,13 @@
     <div class="bot3-wrapper">
         <div class="container">
             <div class="bot3 clearfix">
-                <ul class="menu-bot">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-
-                <div class="copyrights">Copyright @2021 Made with <i class="fa fa-heart" aria-hidden="true"></i> By <a href="#" target="_blank">Mecovache</a>. All Rights Reserve
+                <div class="copyrights">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#" target="_blank">Smart-up technology</a>
+                
                 </div>
 
             </div>
         </div>
     </div>
-		<div class="border_line"></div>
-		<div class="row footer-bottom d-flex justify-content-between align-items-center">
-			<p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Smart-up technology</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			<div class="col-lg-4 col-sm-12 footer-social">
-				<a href="{{contact_info.facebook}}"><i class="fa fa-facebook"></i></a>
-				<a href="{{contact_info.phontwittere_number}}"><i class="fa fa-twitter"></i></a>
-				<a href="{{contact_info.instagram}}"><i class="fa fa-instagram"></i></a>
-				<a href="{{contact_info.youtube}}"><i class="fa fa-youtube"></i></a>
-				<a href="{{contact_info.linkedin}}"><i class="fa fa-linkedin"></i></a>
-			</div>
-		</div>
-	</div>
+		
 </footer>

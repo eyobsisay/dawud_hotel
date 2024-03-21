@@ -52,7 +52,7 @@
 
         <div class="title1">OUR ROOMS</div>
 
-        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+        <div class="title2">Explore Our Nice and Clean Rooms</div>
 
         <div class="row">
             {% for room in accommodations %}
@@ -134,13 +134,44 @@
 
     </div>
 </div>
+
+
+<div id="latest-news">
+    <div class="container">
+
+        <div class="title1">HOTEL SERVIES</div>
+
+        <div class="row">
+            {% for service in hotel_service %}
+            <div class="col-md-6">
+                <div class="latest-news-wrapper">
+                    <div class="latest-news-inner">
+                        <div class="latest-news clearfix">
+                            <figure><img src="{{service.image.url}}" alt="" class="img-fluid"></figure>
+                            <div class="caption">
+                                <div class="txt1"><a href="post.html">{{service.name}}</a></div>
+                                <div class="txt2">{{service.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+           
+        </div>
+
+
+    </div>
+</div>
 <div id="best-places">
     <div class="container">
 
-        <div class="title1">BEST PLACES AROUND THE DELVATORE</div>
+        <div class="title1">BEST PLACES AROUND To Visite In Afar</div>
         <div class="title2">FIND YOUR PLACE</div>
 
         <div class="owl-carousel owl-carousel-wide">
+            {% for attraction in attractions%}
             <div class="item">
                 <div class="place-wrapper">
                     <div class="place-inner">
@@ -149,149 +180,25 @@
                                 <div class="txt1">BEST PLACE GALLERY</div>
                                 <div class="text-block1">
                                     <div class="text-block1-inner">
-                                        <div class="txt2">Aqua Park</div>
-                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
-                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
+                                        <div class="txt2">{{attraction.title}}</div>
+                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i>{{attraction.location}} 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="txt4">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
-                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
-                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
+                                    {{attraction.description}}
                                 </div>
-                                <div class="txt5">
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Sauna</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">SPA</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Free</div>
-                                            <div class="rest1-txt2">Massage</div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <figure class="figure">
-                                <img src="{% static 'images/place01.jpg' %}" alt="" class="img-fluid">
+                                <img src="{{attraction.image.url}}" alt="" class="img-fluid">
                             </figure>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="place-wrapper">
-                    <div class="place-inner">
-                        <div class="place clearfix">
-                            <div class="caption">
-                                <div class="txt1">BEST PLACE GALLERY</div>
-                                <div class="text-block1">
-                                    <div class="text-block1-inner">
-                                        <div class="txt2">Palm Beach</div>
-                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
-                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt4">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
-                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
-                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
-                                </div>
-                                <div class="txt5">
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Sauna</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">SPA</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Free</div>
-                                            <div class="rest1-txt2">Massage</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <figure class="figure">
-                                <img src="{% static 'images/place02.jpg' %}" alt="" class="img-fluid">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="place-wrapper">
-                    <div class="place-inner">
-                        <div class="place clearfix">
-                            <div class="caption">
-                                <div class="txt1">BEST PLACE GALLERY</div>
-                                <div class="text-block1">
-                                    <div class="text-block1-inner">
-                                        <div class="txt2">Casino</div>
-                                        <div class="txt3"><i class="fa fa-map-marker" aria-hidden="true"></i> 123
-                                            GRIDGUM PARK, SAN DIEGO UNITED STATES
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt4">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elitsed the diam nonummy
-                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
-                                    consectetuer adipiscing elitsed the diam nonummy nibh euismod tincidunt.
-                                </div>
-                                <div class="txt5">
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic1.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Sauna</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic2.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">SPA</div>
-                                            <div class="rest1-txt2">INCLUDES</div>
-                                        </div>
-                                    </div>
-                                    <div class="rest1 clearfix">
-                                        <figure><img src="{% static 'images/ic3.png' %}" alt="" class="img-fluid"></figure>
-                                        <div class="rest1-caption">
-                                            <div class="rest1-txt1">Free</div>
-                                            <div class="rest1-txt2">Massage</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <figure class="figure">
-                                <img src="{% static 'images/place03.jpg' %}" alt="" class="img-fluid">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {%endfor%}
+          
         </div>
 
 
@@ -329,33 +236,6 @@
 
     </div>
 </div>
-<div id="latest-news">
-    <div class="container">
 
-        <div class="title1">HOTEL SERVIES</div>
-
-        <div class="row">
-            {% for service in hotel_service %}
-            <div class="col-md-6">
-                <div class="latest-news-wrapper">
-                    <div class="latest-news-inner">
-                        <div class="latest-news clearfix">
-                            <figure><img src="{{service.image.url}}" alt="" class="img-fluid"></figure>
-                            <div class="caption">
-                                <div class="txt1"><a href="post.html">{{service.name}}</a></div>
-                                <div class="txt2">{{service.description}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {%endfor%}
-           
-        </div>
-
-
-    </div>
-</div>
         
 {% endblock %}
