@@ -300,126 +300,29 @@
 <div id="what-client-say">
     <div class="container">
 
-        <div class="title1">WHAT CLIENT SAY</div>
+        <div class="title1">WHAT GUEST SAY ABOUT US SAY</div>
 
-        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
 
         <div class="owl-carousel owl-carousel-testimonials">
+            {% for testimonial in testimonials%}
             <div class="item">
                 <div class="testimonial-wrapper">
                     <div class="testimonial-inner">
                         <div class="testimonial clearfix">
                             <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
+                                "{{testimonial.content}}"
                             </div>
                             <div class="author clearfix">
-                                <figure><img src="{% static 'images/client01.jpg' %}" alt="" class="img-fluid"></figure>
+                                <figure><img src=" {%if testimonial.image.url %} {{ testimonial.image}} {%else%} {% static 'images/client01.jpg' %} {%endif%}" alt="" class="img-fluid"></figure>
                                 <div class="caption">
-                                    <div class="txt1">Nina Chambers</div>
-                                    <div class="txt2">Web Developer</div>
+                                    <div class="txt1">{{testimonial.name}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-inner">
-                        <div class="testimonial clearfix">
-                            <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
-                            </div>
-                            <div class="author clearfix">
-                                <figure><img src="{% static 'images/client02.jpg' %}" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Jeremy Carlson</div>
-                                    <div class="txt2">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-inner">
-                        <div class="testimonial clearfix">
-                            <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
-                            </div>
-                            <div class="author clearfix">
-                                <figure><img src="{% static 'images/client03.jpg' %}" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Josie Howell</div>
-                                    <div class="txt2">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-inner">
-                        <div class="testimonial clearfix">
-                            <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
-                            </div>
-                            <div class="author clearfix">
-                                <figure><img src="{% static 'images/client01.jpg' %}" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Nina Chambers</div>
-                                    <div class="txt2">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-inner">
-                        <div class="testimonial clearfix">
-                            <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
-                            </div>
-                            <div class="author clearfix">
-                                <figure><img src="{% static 'images/client02.jpg' %}" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Jeremy Carlson</div>
-                                    <div class="txt2">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-inner">
-                        <div class="testimonial clearfix">
-                            <div class="testimonial-caption">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper, purus
-                                et iaculis bibendum, felis justo vestibulum velit, ut bibendum ante urna vitae mi."
-                            </div>
-                            <div class="author clearfix">
-                                <figure><img src="{% static 'images/client03.jpg' %}" alt="" class="img-fluid"></figure>
-                                <div class="caption">
-                                    <div class="txt1">Josie Howell</div>
-                                    <div class="txt2">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
 
         </div>
 
@@ -429,40 +332,26 @@
 <div id="latest-news">
     <div class="container">
 
-        <div class="title1">LATEST NEWS</div>
-        <div class="title2">Lorem ipsum dolor sit amet concateur non troppo di saronno la prada</div>
+        <div class="title1">HOTEL SERVIES</div>
 
         <div class="row">
+            {% for service in hotel_service %}
             <div class="col-md-6">
                 <div class="latest-news-wrapper">
                     <div class="latest-news-inner">
                         <div class="latest-news clearfix">
-                            <figure><img src="{% static 'images/news01.jpg' %}" alt="" class="img-fluid"></figure>
+                            <figure><img src="{{service.image.url}}" alt="" class="img-fluid"></figure>
                             <div class="caption">
-                                <div class="txt1"><a href="post.html">Hotel Delvatore's Events</a></div>
-                                <div class="txt2">Lorem ipsum dolor sit amet consetuer adipiscing elit, sed diam
-                                    nonummy.
+                                <div class="txt1"><a href="post.html">{{service.name}}</a></div>
+                                <div class="txt2">{{service.description}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="latest-news-wrapper">
-                    <div class="latest-news-inner">
-                        <div class="latest-news clearfix">
-                            <figure><img src="{% static 'images/news02.jpg' %}" alt="" class="img-fluid"></figure>
-                            <div class="caption">
-                                <div class="txt1"><a href="post.html">Delvatore’s new services</a></div>
-                                <div class="txt2">Lorem ipsum dolor sit amet consetuer adipiscing elit, sed diam
-                                    nonummy.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {%endfor%}
+           
         </div>
 
 
